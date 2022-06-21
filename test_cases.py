@@ -44,5 +44,27 @@ class TestAlgos(unittest.TestCase):
         self.assertEqual(t.COUNTING_permutation_check.solution(PERM), 1)
         self.assertEqual(t.COUNTING_permutation_check.solution(NPERM), 0)
 
+        self.assertEqual(t.COUNTING_countdiv.solution(1,14,2), 7) #1 2x 3 4x 5 6x 7 8x 9 10x 11 12x 13 14x  --> 7 are div by 2, including 14
+        self.assertEqual(t.COUNTING_countdiv.my_dumb_solution(1, 14, 2), 7)
+
+    def test_PREFIX_SUMS(self):
+        A = {}
+        A[0] = 0
+        A[1] = 1
+        A[2] = 0
+        A[3] = 1
+        A[4] = 1
+
+
+        self.assertEqual(t.PREFIX_SUMS_passing_cars.solution(A), 5)#(0, 1), (0, 3), (0, 4), (2, 3), (2, 4)
+
+    def test_STACKS_QUEUES(self):
+        '''
+        STACKS - FILO, like a stack of pancakes, the First in will be the Last eaten, one that is recently pushed (stacked on top)
+        will be the first one popped (eaten)
+
+        QUEUES - FIFO, like a queue for a sausage roll at Gregg's - the first in line (push) will be the first one to get their roll (pop)
+        '''
+
 if __name__ == '__main__':
     unittest.main()
